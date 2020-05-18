@@ -1,5 +1,3 @@
-/*CSS Variables*/
-
 /*Valittuna oli seuraavat väriteemat:
 Taustat:
 #379683
@@ -13,5 +11,261 @@ Fontit:
 /*
 mystory
 mytwitch
-mygihub
+mygithub
+screenshots
+lorem
 */
+
+/*CSS Variables*/
+:root {
+    --primary: #5CDB95 ;
+    --darkgreen: #379683;
+    --lightgreen: #8EE4AF;
+    --blue: #05386B;
+    --white: #EDF5E1;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+
+}
+
+html {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    color: var(--blue);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--white);
+}
+
+body {
+    background: var(--primary);
+    margin: 30px 50px;
+    line-height: 1.3;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    margin-top: 40px;
+    overflow: hidden;
+    
+}
+
+
+/*Navbar*/
+
+.navbar {
+    background: var(--primary);
+    overflow: hidden;
+    position: fixed;
+    top: 6px;
+    min-width: 35%;
+    box-shadow: var(--shadow);
+    
+    
+}
+
+.navbar ul {
+    display: grid;
+    grid-gap: 10px;
+    padding: 5px;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+
+
+/*Linkit*/
+.navbar a {
+    background: var(--darkgreen);
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    color: var(--lightgreen);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow);
+}
+.navbar a:hover {
+    background: var(--primary);
+    color: var(--white)
+}
+/*Navbar ends*/
+
+/*Top container*/
+
+.top-container {
+    display: grid;
+    grid-gap: 20px;
+    margin-top: 20px;
+    grid-template-areas: 
+    'showcase showcase'
+    'showcase showcase'
+    'top-box-a top-box-b'
+    'top-box-a top-box-b';
+}
+
+/*Top container ends*/
+
+/*Showcase*/
+
+.showcase {
+    margin-top: 60px;
+    overflow: hidden;
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(img/showcase.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+
+}
+
+.showcase h1 {
+    font-size: 6rem;
+    margin-bottom: 0;
+    color: var(--white);
+}
+
+.showcase p {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: var(--primary)
+}
+
+/*Showcase ends*/
+
+
+/*Top box*/
+.top-box {
+    background: var(--lightgreen);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.6rem;
+}
+
+.top-box h2 {
+    font-size: 2.5rem;
+}
+
+.top-box .mystory {
+    font-size: 1.5rem;
+}
+
+.top-box .lorem {
+    font-size: 1.5rem;
+}
+
+.top-box-a {
+    grid-area: top-box-a;
+
+}
+.top-box-b {
+    grid-area: top-box-b;
+
+}
+/*Top box ends*/
+
+
+/*Boxes*/
+.boxes {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /*ei toiminu tämä vielä! Ei mene responsiivisesti, ehkä media query vois toimii*/
+
+}
+
+.box {
+    background: var(--lightgreen);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+}
+/*Boxes ends*/
+
+
+/*Screenshots*/
+.screenshots {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 1.5rem 2rem;
+}
+
+.screenshots img {
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+/*Screenshots ends*/
+
+
+/*Footer*/
+footer {
+    margin-top: 2rem;
+    background: var(--darkgreen);
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+}
+/*Footer ends*/
+
+/*Media Queries*/
+@media(max-width: 900px) {
+    .wrapper {
+        margin-top: 40px;
+        overflow: hidden;
+    }
+    .top-container {
+        grid-template-areas: 
+        'showcase showcase'
+        'top-box-a top-box-b';
+        
+    }
+
+    img {
+        max-width: 100px;
+    }
+    
+    .showcase h1 {
+        font-size: 2.5rem;
+    }
+    .showcase {
+        margin-top: 10px; 
+    }
+    .navbar {
+        position: relative;
+        max-width: 65%;
+        margin-left: 1px;
+        margin-right: 1px;
+
+    }
+    .navbar ul {
+        grid-template-columns: 1fr;
+    }
+   
+   
+}
+
+/*tämä max 500px laite, eli älypuhelin yms.*/
+@media (max-width: 500px) {
+    .top-container {
+        grid-template-areas: 
+        'showcase'
+        'top-box-a'
+        'top-box-b';
+    }
+}
+/*Media Queries end*/
